@@ -156,4 +156,9 @@ describe('checkout test suite', () => {
     checkout.scan(sku.IPD);
     assert.equal(checkout.total(), 1949.98);
   });
+
+  test('scan invalid item', () => {
+    checkout.scan('invalid');
+    assert.equal(checkout.total(), 0);
+  });
 });
