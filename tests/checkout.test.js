@@ -17,7 +17,9 @@ describe('checkout test suite', () => {
     checkout.scan(sku.ATV);
     checkout.scan(sku.ATV);
     assert.equal(checkout.total(), 219);
+  });
 
+  test('should get two prices of apple TV if buy more than three', () => {
     checkout.scan(sku.ATV);
     checkout.scan(sku.ATV);
     checkout.scan(sku.ATV);
@@ -74,17 +76,23 @@ describe('checkout test suite', () => {
     checkout.scan(sku.VGA);
     checkout.scan(sku.MBP);
     assert.equal(checkout.total(), 1399.99);
+  });
 
+  test('should get a free VGA for every Mac', () => {
     checkout.scan(sku.VGA);
     checkout.scan(sku.MBP);
     checkout.scan(sku.MBP);
     assert.equal(checkout.total(), 2799.98);
+  });
 
+  test('should get a free VGA for every Mac', () => {
     checkout.scan(sku.VGA);
     checkout.scan(sku.VGA);
     checkout.scan(sku.MBP);
     assert.equal(checkout.total(), 1429.99);
+  });
 
+  test('should get a free VGA for every Mac', () => {
     checkout.scan(sku.VGA);
     checkout.scan(sku.VGA);
     checkout.scan(sku.VGA);
@@ -100,7 +108,9 @@ describe('checkout test suite', () => {
     checkout.scan(sku.IPD);
     checkout.scan(sku.ATV);
     assert.equal(checkout.total(), 1239.48);
+  });
 
+  test('checkout combined items without discount', () => {
     checkout.scan(sku.IPD);
     checkout.scan(sku.ATV);
     checkout.scan(sku.MBP);
@@ -119,13 +129,17 @@ describe('checkout test suite', () => {
     checkout.scan(sku.ATV);
     checkout.scan(sku.ATV);
     assert.equal(checkout.total(), 2748.97);
+  });
 
+  test('checkout combined items with discount', () => {
     checkout.scan(sku.ATV);
     checkout.scan(sku.ATV);
     checkout.scan(sku.ATV);
     checkout.scan(sku.VGA);
     assert.equal(checkout.total(), 249);
+  });
 
+  test('checkout combined items with discount', () => {
     checkout.scan(sku.ATV);
     checkout.scan(sku.IPD);
     checkout.scan(sku.IPD);
@@ -134,7 +148,9 @@ describe('checkout test suite', () => {
     checkout.scan(sku.IPD);
     checkout.scan(sku.IPD);
     assert.equal(checkout.total(), 2718.95);
+  });
 
+  test('checkout combined items with discount', () => {
     checkout.scan(sku.MBP);
     checkout.scan(sku.VGA);
     checkout.scan(sku.IPD);

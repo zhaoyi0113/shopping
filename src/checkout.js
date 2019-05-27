@@ -22,7 +22,6 @@ class Checkout {
       (accumulator, current) => accumulator + current(this.items),
       0
     );
-    this.items = [];
     return parseFloat((sum + discount).toFixed(2));
   }
 }
