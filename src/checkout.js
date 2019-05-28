@@ -16,11 +16,11 @@ class Checkout {
   total() {
     const sum = this.items.reduce(
       (accumulator, current) => accumulator + current.price,
-      0
+      0,
     );
     const discount = this.pricingRules.reduce(
       (accumulator, current) => accumulator + current(this.items),
-      0
+      0,
     );
     return parseFloat((sum + discount).toFixed(2));
   }
